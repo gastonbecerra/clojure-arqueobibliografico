@@ -1,12 +1,13 @@
 {:paths ["src" "resources"]
- :deps {
-        org.clojure/clojure {:mvn/version "1.11.1"}
-        http-kit/http-kit {:mvn/version "2.8.0-beta-3"}
-        com.github.oliyh/martian-httpkit {:mvn/version "0.1.25"}
-        cheshire/cheshire {:mvn/version "5.12.0"}
-        }
+ :deps  {org.clojure/clojure {:mvn/version "1.11.1"}
+         http-kit/http-kit {:mvn/version "2.8.0-beta3"}
+         com.github.oliyh/martian {:mvn/version "0.1.25"}
+         cheshire/cheshire {:mvn/version "5.12.0"}
+         com.github.oliyh/martian-httpkit {:mvn/version "0.1.25"}}
  :aliases
- {:run-m {:main-opts ["-m" "gastonbecerra.clojure-arqueobibliografico"]}
+ {:dev {:extra-deps {djblue/portal {:mvn/version "0.51.0"}}
+        :extra-paths ["dev"]}
+  :run-m {:main-opts ["-m" "gastonbecerra.clojure-arqueobibliografico"]}
   :run-x {:ns-default gastonbecerra.clojure-arqueobibliografico
           :exec-fn greet
           :exec-args {:name "Clojure"}}
